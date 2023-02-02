@@ -6,7 +6,7 @@
 /*   By: ricosta- <ricosta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:38:42 by ricosta-          #+#    #+#             */
-/*   Updated: 2023/02/02 15:44:08 by ricosta-         ###   ########.fr       */
+/*   Updated: 2023/02/02 16:12:45 by ricosta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ char	*get_next_line(int fd)
 		return (NULL);
 	}
 	line = NULL;
-	// aqui tenho de ver se o buffer esta vazio ou nao, caso nao este
+	// aqui tenho de ver se o buffer esta vazio ou nao, caso nao esteja tem de ser colocado 
+	//na new line antes de voltar a ler
 	while (read(fd, temp, BUFFER_SIZE))
 	{
 		line = strjoin(line, temp);
