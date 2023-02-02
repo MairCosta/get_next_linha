@@ -6,7 +6,7 @@
 /*   By: ricosta- <ricosta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:38:42 by ricosta-          #+#    #+#             */
-/*   Updated: 2023/02/02 11:51:53 by ricosta-         ###   ########.fr       */
+/*   Updated: 2023/02/02 15:44:08 by ricosta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,34 @@
 char	*get_next_line(int fd)
 {
 	int			i;
+	char		line;
 	static char	temp[BUFFER_SIZE + 1];
 
 	i = 0;
-	while (read(fd, buf, BUFFER_SIZE))
+	if (BUFFER_SIZE < 1 || read(fd, 0, 0) < 0)
 	{
-		
+		while (temp[i])
+			temp[i++] = 0;
+		return (NULL);
+	}
+	line = NULL;
+	// aqui tenho de ver se o buffer esta vazio ou nao, caso nao este
+	while (read(fd, temp, BUFFER_SIZE))
+	{
+		line = strjoin(line, temp);
 	}
 }
 
-
-int main()
+/*int main()
 {
+	int	fd;
+	char	*line;
 	
-	chamar a open
-	get_next_line(path)
-}
+	fd = open("mair.txt", O_RDONLY);
+	line = get_next_line(fd);
+	while (line)
+	{
+		printf("%s", line);
+		line = get_next_line(fd);
+	}
+}*/

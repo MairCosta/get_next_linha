@@ -6,7 +6,7 @@
 /*   By: ricosta- <ricosta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:30:42 by ricosta-          #+#    #+#             */
-/*   Updated: 2023/02/02 11:42:14 by ricosta-         ###   ########.fr       */
+/*   Updated: 2023/02/02 15:43:50 by ricosta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,18 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <sys/stat.h>
 # include <stdlib.h>
 # include <limits.h>
 
-//unistd for read, fcntl for open
+//unistd & stdio for read, fcntl & sys/stat for open;
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 3
+#  define BUFFER_SIZE 5
 # endif
 
 char	*get_next_line(int fd);
+char	*ft_strjoin(char *line, char *temp);
+size_t	ft_strlen(const char *str);
 
 #endif

@@ -6,42 +6,44 @@
 /*   By: ricosta- <ricosta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:18:08 by ricosta-          #+#    #+#             */
-/*   Updated: 2023/02/02 11:36:59 by ricosta-         ###   ########.fr       */
+/*   Updated: 2023/02/02 15:39:43 by ricosta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <get_next_line.h>
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
 	i = 0;
-	while (s[i])
+	while (str[i] != '\n')
 		i++;
 	return (i);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *line, char *temp)
 {
-	char	*s3;
+	char	*newline;
 	size_t	i;
 	size_t	j;
 
 	i = 0;
 	j = 0;
-	s3 = malloc(ft_strlen(s1) + ft_strlen(s2) +1);
-	if (!s3)
+	newline = malloc(ft_strlen(line) + ft_strlen(temp) + 1);
+	if (!newline)
 	{
 		return (NULL);
 	}
-	while (s1[i])
+	while (line[i])
 	{
-		s3[i] = s1[i];
+		newline[i] = line[i];
 		i++;
 	}
-	while (s2[j])
-		s3[i++] = s2[j++];
-	s3[i] = '\0';
-	return (s3);
+	free (line);
+	while (temp[j])
+		newline[i++] = temp[j++];
+	newline[i] = '\0';
+	free(temp);
+	return (newline);
 }
