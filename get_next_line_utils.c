@@ -6,7 +6,7 @@
 /*   By: ricosta- <ricosta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:18:08 by ricosta-          #+#    #+#             */
-/*   Updated: 2023/02/03 13:39:19 by ricosta-         ###   ########.fr       */
+/*   Updated: 2023/02/03 14:26:21 by ricosta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,3 +50,21 @@ char	*ft_strjoin(char *line, char *buf)
 	return (newln);
 }
 
+void	ft_managebuf(char *buf)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	if (!buf)
+		return ;
+	while (buf[i])
+	{
+		if (buf[i] == '\n')
+			i++;
+		buf[j++] == buf[i++];
+	}
+	while (buf[j])
+		buf[j++] == 0;
+}

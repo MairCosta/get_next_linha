@@ -6,7 +6,7 @@
 /*   By: ricosta- <ricosta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:30:42 by ricosta-          #+#    #+#             */
-/*   Updated: 2023/02/03 12:37:54 by ricosta-         ###   ########.fr       */
+/*   Updated: 2023/02/03 14:21:01 by ricosta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ char	*get_next_line(int fd);
 char	*ft_strjoin(char *line, char *buf);
 size_t	ft_strlen(const char *s);
 
-int	checkbuf(int buf);
+void	ft_managebuf(char *buf);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ricosta- <ricosta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:38:42 by ricosta-          #+#    #+#             */
-/*   Updated: 2023/02/03 13:09:40 by ricosta-         ###   ########.fr       */
+/*   Updated: 2023/02/03 14:19:43 by ricosta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,12 @@ char	*get_next_line(int fd)
 	line = NULL;
 	while (buf[0] || read(fd, buf, BUFFER_SIZE))
 	{
-		line = strjoin(line, buf);
-		if (cleanbuf(buf))
+		line = ft_strjoin(line, buf);
+		if (ft_managebuf(buf))
 				break ;
 	}
 	return (line);
+	
 }
 
 /*int main()
