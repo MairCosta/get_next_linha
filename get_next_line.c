@@ -6,11 +6,11 @@
 /*   By: ricosta- <ricosta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:38:42 by ricosta-          #+#    #+#             */
-/*   Updated: 2023/02/03 14:37:46 by ricosta-         ###   ########.fr       */
+/*   Updated: 2023/02/03 14:56:26 by ricosta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <get_next_line.h>
+#include "get_next_line.h"
 
 char	*get_next_line(int fd)
 {
@@ -29,18 +29,17 @@ char	*get_next_line(int fd)
 	while (buf[0] || read(fd, buf, BUFFER_SIZE))
 	{
 		line = ft_strjoin(line, buf);
-		if (ft_managebuf(buf))
-				break ;
+		if (*ft_managebuf(buf))
+			break ;
 	}
 	return (line);
-	
 }
 
-int main()
+/*int	main(void)
 {
-	int	fd;
+	int		fd;
 	char	*line;
-	
+
 	fd = open("mair.txt", O_RDONLY);
 	line = get_next_line(fd);
 	while (line)
@@ -48,4 +47,4 @@ int main()
 		printf("%s", line);
 		line = get_next_line(fd);
 	}
-}
+}*/

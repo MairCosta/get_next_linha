@@ -6,11 +6,11 @@
 /*   By: ricosta- <ricosta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:18:08 by ricosta-          #+#    #+#             */
-/*   Updated: 2023/02/03 14:37:40 by ricosta-         ###   ########.fr       */
+/*   Updated: 2023/02/03 14:55:51 by ricosta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <get_next_line.h>
+#include "get_next_line.h"
 
 size_t	ft_strlen(const char *s)
 {
@@ -50,7 +50,7 @@ char	*ft_strjoin(char *line, char *buf)
 	return (newln);
 }
 
-char	ft_managebuf(char *buf)
+char	*ft_managebuf(char *buf)
 {
 	int	i;
 	int	j;
@@ -58,13 +58,16 @@ char	ft_managebuf(char *buf)
 	i = 0;
 	j = 0;
 	if (!buf)
-		return ;
+		return (0);
 	while (buf[i])
 	{
 		if (buf[i] == '\n')
 			i++;
-		buf[j++] == buf[i++];
+		buf[j] = buf[i];
+		i++;
+		j++;
 	}
 	while (buf[j])
-		buf[j++] == 0;
+		buf[j++] = 0;
+	return (buf);
 }
