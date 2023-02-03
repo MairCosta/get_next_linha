@@ -6,7 +6,7 @@
 /*   By: ricosta- <ricosta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:38:42 by ricosta-          #+#    #+#             */
-/*   Updated: 2023/02/03 14:19:43 by ricosta-         ###   ########.fr       */
+/*   Updated: 2023/02/03 14:37:46 by ricosta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*get_next_line(int fd)
 	
 }
 
-/*int main()
+int main()
 {
 	int	fd;
 	char	*line;
@@ -48,4 +48,4 @@ char	*get_next_line(int fd)
 		printf("%s", line);
 		line = get_next_line(fd);
 	}
-}*/
+}
