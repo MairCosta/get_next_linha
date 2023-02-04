@@ -3,34 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mair <mair@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ricosta- <ricosta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:18:08 by ricosta-          #+#    #+#             */
-/*   Updated: 2023/02/04 10:14:28 by mair             ###   ########.fr       */
+/*   Updated: 2023/02/04 18:24:33 by ricosta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *s)
+size_t ft_strlen(const char *s)
 {
-	size_t	i;
+	size_t i;
 
 	i = 0;
 	if (!s)
 		return (0);
 	while (s[i] && s[i] != '\n')
 		i++;
-	if (s[i] == '\n')
+	if (s[++i] == '\n')
 		i++;
+	//printf("strlen:%ld", i);
 	return (i);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char *ft_strjoin(char *s1, char *s2)
 {
-	char	*s3;
-	int		i;
-	int		j;
+	char *s3;
+	int i;
+	int j;
 
 	i = 0;
 	j = 0;
@@ -38,18 +39,21 @@ char	*ft_strjoin(char *s1, char *s2)
 	if (!s3)
 		return (NULL);
 	while (s1 && s1[i])
-		s3[j++] = s1[i++];
-	while (s2 && s2[i])
-		s3[j++] = s2[i++];
+	{
+		s3[i] = s1[i];
+		i++;
+	}
+	while (s2 && s2[j])
+		s3[i++] = s2[j++];
 	s3[j] = '\0';
-	free(s1);
+	free (s1);
 	return (s3);
 }
 
-char	ft_check(char *buf)
+int ft_check(char *buf)
 {
-	int	i;
-	int	j;
+	int i;
+	int j;
 
 	i = 0;
 	j = 0;
@@ -59,9 +63,7 @@ char	ft_check(char *buf)
 	{
 		if (buf[i] == '\n')
 			i++;
-		buf[j] = buf[i];
-		i++;
-		j++;
+		buf[j++] = buf[i++];
 	}
 	while (buf[j])
 		buf[j++] = '\0';
