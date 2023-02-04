@@ -6,7 +6,7 @@
 /*   By: ricosta- <ricosta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:30:42 by ricosta-          #+#    #+#             */
-/*   Updated: 2023/02/04 18:17:58 by ricosta-         ###   ########.fr       */
+/*   Updated: 2023/02/04 19:26:50 by ricosta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 //unistd & stdio for read, fcntl & sys/stat for open;
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
+#  define BUFFER_SIZE 4
 # endif
 
 char	*get_next_line(int fd);

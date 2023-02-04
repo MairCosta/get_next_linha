@@ -6,7 +6,7 @@
 /*   By: ricosta- <ricosta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:38:42 by ricosta-          #+#    #+#             */
-/*   Updated: 2023/02/04 18:21:38 by ricosta-         ###   ########.fr       */
+/*   Updated: 2023/02/04 20:21:59 by ricosta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	}
 	line = NULL;
-	while (buf[0] || read(fd, buf, BUFFER_SIZE))
+	while (buf[0] || read(fd, buf, BUFFER_SIZE) > 0)
 	{
 		line = ft_strjoin(line, buf);
 		if (ft_check(buf))
@@ -44,7 +44,7 @@ char	*get_next_line(int fd)
 	line = get_next_line(fd);
 	while (line)
 	{
+		printf("%s", line);
 		line = get_next_line(fd);
-		//printf("show line%s", line);
 	}
 }*/
