@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ricosta- <ricosta-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mair <mair@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:38:42 by ricosta-          #+#    #+#             */
-/*   Updated: 2023/02/04 20:21:59 by ricosta-         ###   ########.fr       */
+/*   Updated: 2023/02/04 22:18:50 by mair             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,20 @@ char	*get_next_line(int fd)
 {
 	int			i;
 	char		*line;
-	static char	buf[BUFFER_SIZE + 1];
+	static char	buff[BUFFER_SIZE + 1];
 
 	i = 0;
 	if (BUFFER_SIZE < 1 || read(fd, 0, 0) < 0)
 	{
-		while (buf[i])
-			buf[i++] = 0;
+		while (buff[i])
+			buff[i++] = 0;
 		return (NULL);
 	}
 	line = NULL;
-	while (buf[0] || read(fd, buf, BUFFER_SIZE) > 0)
+	while (buff[0] || read(fd, buff, BUFFER_SIZE))
 	{
-		line = ft_strjoin(line, buf);
-		if (ft_check(buf))
+		line = ft_strjoin(line, buff);
+		if (ft_check(buff))
 			break ;
 	}
 	return (line);

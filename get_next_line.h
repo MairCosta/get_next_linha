@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ricosta- <ricosta-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mair <mair@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:30:42 by ricosta-          #+#    #+#             */
-/*   Updated: 2023/02/04 19:26:50 by ricosta-         ###   ########.fr       */
+/*   Updated: 2023/02/04 22:21:19 by mair             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,11 @@
 # endif
 
 char	*get_next_line(int fd);
-char	*ft_strjoin(char *line, char *buf);
-size_t	ft_strlen(const char *s);
 
-int	ft_check(char *buf);
+char	*ft_strjoin(char *line, char *buff);
+
+int     ft_check(char *buff);
+
+size_t	ft_strlen(const char *s);
 
 #endif

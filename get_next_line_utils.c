@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ricosta- <ricosta-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mair <mair@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:18:08 by ricosta-          #+#    #+#             */
-/*   Updated: 2023/02/04 20:08:22 by ricosta-         ###   ########.fr       */
+/*   Updated: 2023/02/04 22:19:45 by mair             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (!s)
@@ -24,11 +24,11 @@ size_t ft_strlen(const char *s)
 	return (i);
 }
 
-char *ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	char 	*s3;
-	int 	i;
-	int 	j;
+	char	*s3;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
@@ -48,31 +48,30 @@ char *ft_strjoin(char *s1, char *s2)
 	if (s2[j] == '\n')
 		s3[i++] = '\n';
 	s3[i] = '\0';
-	//printf("s3 depois de s2 interferir:%s\n", s3);
 	return (s3);
 }
 
-int ft_check(char *buf)
+int	ft_check(char *buff)
 {
-	int i;
-	int j;
-	int check;
+	int	i;
+	int	j;
+	int	check;
 
 	i = 0;
 	j = 0;
 	check = 0;
-	if (!buf)
+	if (!buff)
 		return (0);
-	while (buf[i])
+	while (buff[i])
 	{
 		if (check == 1)
 		{
-			buf[j] = buf[i];
+			buff[j] = buff[i];
 			j++;
 		}
-		if (buf[i] == '\n')
+		if (buff[i] == '\n')
 			check = 1;
-		buf[i] = '\0';
+		buff[i] = '\0';
 		i++;
 	}
 	return (check);
