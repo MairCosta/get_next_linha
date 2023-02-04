@@ -6,7 +6,7 @@
 /*   By: mair <mair@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:38:42 by ricosta-          #+#    #+#             */
-/*   Updated: 2023/02/04 09:14:57 by mair             ###   ########.fr       */
+/*   Updated: 2023/02/04 10:14:51 by mair             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*get_next_line(int fd)
 	while (buf[0] || read(fd, buf, BUFFER_SIZE))
 	{
 		line = ft_strjoin(line, buf);
-		if (*ft_managebuf(buf))
+		if (ft_check(buf))
 			break ;
 	}
 	return (line);
