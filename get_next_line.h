@@ -6,7 +6,7 @@
 /*   By: mair <mair@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:30:42 by ricosta-          #+#    #+#             */
-/*   Updated: 2023/02/04 22:27:46 by mair             ###   ########.fr       */
+/*   Updated: 2023/02/06 18:55:39 by mair             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*get_next_line(int fd);
 
 char	*ft_strjoin(char *line, char *buff);
 
-size_t	ft_strlen(const char *s);
+int	    ft_strlen(const char *s);
 
 int		ft_check(char *buf);
 

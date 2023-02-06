@@ -6,7 +6,7 @@
 /*   By: mair <mair@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 18:13:43 by mair              #+#    #+#             */
-/*   Updated: 2023/02/06 18:52:21 by mair             ###   ########.fr       */
+/*   Updated: 2023/02/06 18:56:25 by mair             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
+
+//unistd & stdio for read, fcntl & sys/stat for open;
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 5
