@@ -6,13 +6,13 @@
 /*   By: mair <mair@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:18:08 by ricosta-          #+#    #+#             */
-/*   Updated: 2023/02/06 18:55:27 by mair             ###   ########.fr       */
+/*   Updated: 2023/02/06 20:09:39 by mair             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	ft_strlen(const char *s)
+int	ft_strlen(char *s)
 {
 	int	i;
 

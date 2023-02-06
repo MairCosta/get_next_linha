@@ -6,9 +6,11 @@
 /*   By: mair <mair@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 18:23:10 by mair              #+#    #+#             */
-/*   Updated: 2023/02/06 18:57:23 by mair             ###   ########.fr       */
+/*   Updated: 2023/02/06 21:02:00 by mair             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "get_next_line_bonus.h"
 
 int     ft_strlen(char *s)
 {
@@ -37,7 +39,7 @@ char    *ft_strjoin(char *s1, char *s2)
         return (NULL);
     while (s1 && s1[i])
     {
-        s3[i] == s1[i];
+        s3[i] = s1[i];
         i++;
     }
     free (s1);
