@@ -6,7 +6,7 @@
 /*   By: mair <mair@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:38:42 by ricosta-          #+#    #+#             */
-/*   Updated: 2023/02/05 09:26:17 by mair             ###   ########.fr       */
+/*   Updated: 2023/02/06 19:17:05 by mair             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-/*int	main(void)
+int	main(void)
 {
 	int		fd;
 	char	*line;
@@ -47,4 +47,4 @@ char	*get_next_line(int fd)
 		printf("%s", line);
 		line = get_next_line(fd);
 	}
-}*/
+}
