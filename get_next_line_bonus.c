@@ -6,7 +6,7 @@
 /*   By: mair <mair@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:48:51 by mair              #+#    #+#             */
-/*   Updated: 2023/02/06 21:09:28 by mair             ###   ########.fr       */
+/*   Updated: 2023/02/06 21:11:53 by mair             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,24 @@ char	*get_next_line(int fd)
 	}
 	return (line);
 }
+
+/*int main(void)
+{
+	int fd;
+	int fd2;
+
+	fd = open("mair.txt", O_RDONLY);
+	fd2 = open("student.txt", O_RDONLY);
+	printf("line 01: %s\n", get_next_line(fd));
+	printf("line 02: %s\n", get_next_line(fd));
+	printf("line 01: %s\n", get_next_line(fd2));
+	printf("line 02: %s\n", get_next_line(fd2));
+	printf("line 01: %s\n", get_next_line(fd));
+	printf("line 02: %s\n", get_next_line(fd));
+	// printf("%s\n", get_next_line(fd));
+	// printf("%s\n", get_next_line(fd));
+	// printf("%s\n", get_next_line(fd));
+	close(fd);
+	close (fd2);
+	return (0);
+}*/
